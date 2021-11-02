@@ -1,0 +1,118 @@
+Four main types of data analytics(in order of complexity): Descriptive, diagnostic, predictive, and prescriptive.
+ Diagnostic analysis as a set of actions a system can do to help stakeholders understand why something happened. 
+ Predictive data analysis involves more complexity, because, as the name suggests, it predicts what is likely to happen in the future based on data from the past, or based on doing a data crossover between multiple datasets and sources. In a nutshell, it kind of tries to predict the future based on actions from the past.
+ Prescriptive analysis can go ahead and suggest stakeholders what are the most data-driven decisions that needs to be taken based on past events and outcomes. Prescriptive analysis highly relies on machine learning strategies in order to find patterns and their corresponding remediations by looking and crossing large datasets.
+ Data analysis exists at the intersection of using information technology, statistics, and domain knowledge.
+ We discuss on IT using AWS services.
+-------------------------------------------------------------------------------------------
+Most common Data Analysis nowadays:
+ Analytics helps people develop insights, and those insights help them to deal with complex problem solving.
+ scalability and data driven decisions.
+ Part of data analytics - log Analytics - security logs.
+  Web server logs - get insights about visitors in a websites.
+  Deviations ,anamolies - security.
+  Self- healing architecture.
+ Log aggregation and visulalisation.
+ AWS Cloudtrail(api logs) and Amazon S3- Amazon simple storage service- storage.
+ ARN : Amazon resource name.
+ data security analytics.
+-------------------------------------------------------------------------------------------------
+How is data analytics present in your life?
+ How quickly do you need analytic results—in real time, in seconds, or is an hour a more appropriate timeframe?
+ How much value will these analytics provide your organization, and what budget constraints exist?
+ How large is the data, and what is its growth rate?
+ How is the data structured?
+ What integration capabilities do the producers and consumers have?
+ How much latency is acceptable between the producers and consumers?
+ What is the cost of downtime, or how available and durable does the solution need to be?
+ Is the analytic workload consistent, or elastic?
+-------------------------------------------------------------------------------------------------------
+Why do Data Analytics in the Cloud?
+ Another big advantage of running data analytics in the cloud is the ability to stop paying for infrastructure resources when you don't need them anymore. 
+----------------------------------------------------------------------------------------------
+Popular AWS Services Used for Analytics Solutions:
+ Amazon S3:(Storage) Simple Storage Service, or SSS, or S3.
+  -  High durable: it replicates data by default across multiple facilities, providing solid data durability, which means that chances of data being lost is reduced a lot.
+  -  Per-Usage pricing: it charges per usage. So the pricing goes exactly according to your needs, no more, no less, than what you need.
+  -  AWS Service Integration: it is deeply integrated with other AWS services. So, if you have any other AWS service that needs to store data somewhere, S3 is the very first candidate to be integrated with that service. For example, if you're using AWS Elastic Load Balancer, or ELBs, to balance traffic to your website frontend, ELB can save the access logs into an S3 bucket.
+  -  S3 nomenclature: buckets are the basic storage units that you put your data into.
+        - Buckets are the basic storage units that you put your data into. 
+        - S3 is the service. Buckets are the logical storage units.
+        - Objects are the data you add into a bucket.
+        - A bucket policy is the permission mechanism applied to a bucket, which defines who can and who cannot interact with the data inside it.
+        - S3 allows you to configure a storage class on the object level, also known as storage temperature, such as more or less access to. That changes the price you pay per gigabyte storage. And you can save some money by moving less-frequently accessed objects to a colder storage class.
+        - One bucket can have multiple objects.
+        - The configuration of storage classes are on the object level.
+        - Don't need to create multiple buckets or move objects around if you want different storage classes in your buckets. 
+ Amazon Athena:(Process) to import csv files into Amazon S3 and run SQL like queries on Amazon Athena - no need to build servers such as SQL or MySQL.
+  - No DB, No Servers and No Complexity = Serverless.
+  - Process:(durable)
+    - Create a table.
+    - Set bucket location.(S3)
+    - Start querying qith SQL.
+ Amazon QuickSight:(Visulalisation and analyse data using athena query result)
+-------------------------------------------------------------------------------------------------------------------------
+Building a Simple AWS CloudTrail Data Analytics Solution (Part 1)
+ - https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-DataAnalytics/demo-part1-Configure-Cloud-Trail-And-Add-Secondary-IAM-User.html
+Building a Simple AWS CloudTrail Data Analytics Solution (Part 2)
+ - https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-DataAnalytics/demo-part2-Query-Cloudtrail-Data-In-Amazon-Athena.html
+Building a Simple AWS CloudTrail Data Analytics Solution (Part 3)
+ - https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-DataAnalytics/demo-part3-Visualizing-Amazon-Athena-Data-In-Amazon-QuickSight.html
+Demo conclusion - more information about Athena and CloudTrail on Querying CloudTrail Logs(https://docs.aws.amazon.com/athena/latest/ug/cloudtrail-logs.html)
+-------------------------------------------------------------------------------------------------------------------------
+Amazon S3, AWS CloudTrail, Amazon Athena, AWS Datasets, Amazon QuickSight, and others
+-Amazon Athena
+  Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon Simple Storage Service (Amazon S3) using standard SQL. Athena is serverless, so you don’t need to manage infrastructure, and you pay only for the queries that you run.
+
+  In this course, you will do a basic Amazon Athena exercise, but Athena offers various optimizations such as ideal partitioning and indexing. Athena can also store data in Amazon S3 in different file formats that match what Athena looks for when it runs a query in a performant way. See these Top 10 performance tuning tips for Amazon Athena.(https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/)
+
+  With Athena, you only need to point to your data in Amazon S3, define the schema, and start querying with standard SQL. Most results are delivered in seconds. When you use Athena, you don’t need to use complex extract, transform, and load (ETL) jobs to prepare your data for analysis. If you have SQL skills, you can quickly analyze large-scale datasets.
+
+  For more information, see the Amazon Athena product page.(https://aws.amazon.com/athena/)
+
+-Amazon S3
+  Although you can have public S3 buckets for web hosting and media hosting, most S3 buckets that you use for data analytics will be private buckets that restrict access only to authorized personnel and systems.
+
+  Amazon Simple Storage Service (Amazon S3) is an object storage service that offers scalability, data availability, security, and performance. Customers of all sizes and industries can use it to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, Internet of Things (IoT) devices, and big data analytics. Amazon S3 provides management features so that you can organize your data and configure finely tuned access controls to meet your specific business, organizational, and compliance requirements. Amazon S3 is designed for high durability, and it stores data for millions of applications for companies all around the world.
+
+  For more information, see the Amazon S3 product page.(https://aws.amazon.com/s3/)
+
+-Amazon S3 Storage Classes
+  Amazon S3 offers a range of storage classes that are designed for different use cases. These classes include: 
+
+    S3 Standard for general-purpose storage of frequently accessed data 
+
+    S3 Intelligent-Tiering for data with unknown or changing access patterns
+
+    S3 Standard-Infrequent Access (S3 Standard-IA) and S3 One Zone-Infrequent Access (S3 One Zone-IA) for long-lived, but less frequently accessed data
+
+    Amazon S3 Glacier (S3 Glacier) and Amazon S3 Glacier Deep Archive (S3 Glacier Deep Archive) for long-term archive and digital preservation. 
+
+  If you have data residency requirements that can’t be met by an existing AWS Region, you can use the S3 Outposts storage class to store your Amazon S3 data on premises. Amazon S3 also offers capabilities to manage your data throughout its lifecycle. After you set an S3 lifecycle policy, your data will automatically transfer to a different storage class without any changes to your application.
+
+  For more information, see Amazon S3 Storage Classes.(https://aws.amazon.com/s3/storage-classes/)
+
+-AWS CloudTrail
+  AWS CloudTrail plays a role in security data analytics. It’s an AWS service that logs application programming interface (API) activity that’s made towards AWS accounts. CloudTrail supports multi-account integration, which means that if you use this feature, CloudTrail can collect activity across all your AWS accounts into one S3 bucket. This feature works well when you have separate environments l(ike Dev, QA, or Prod) into separate accounts, but you still want to store logging information in a central location. You can also choose to store the data into separate buckets for additional resiliency.
+
+  CloudTrail logs API activities even if they fail, which is important for troubleshooting issues and evaluating security postures. That’s why we say it enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, monitor, and retain account activity that’s related to actions across your AWS infrastructure. CloudTrail provides an event history of your AWS account activity, including actions that were taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services. This event history simplifies security analysis, resource change tracking, and troubleshooting. In addition, you can use CloudTrail to detect unusual activity in your AWS accounts. These capabilities help simplify operational analysis and troubleshooting.
+
+  For more information, see the AWS CloudTrail product page.(https://aws.amazon.com/cloudtrail/)
+
+-AWS Datasets
+  AWS Datasets, also known as the Registry of Open Data on AWS, is a repository of data that’s publicly available for AWS customers to get data and create analytics solutions. It offers S3 buckets with information that’s available and ready to be consumed by your applications.
+
+  For more information, see the Registry of Open Data on AWS.(https://registry.opendata.aws/)
+
+-Amazon QuickSight
+  Among many data visualization tools in the market, Amazon QuickSight is the one that has more integration with AWS Services, because it is an AWS Service.
+
+  Amazon QuickSight is a scalable, serverless, embeddable, machine-learning-powered business intelligence (BI) service that’s built for the cloud. With QuickSight, you can create and publish interactive BI dashboards that include insights that are powered by machine learning. QuickSight dashboards can be accessed from any device, and you can embed them into your applications, portals, and websites.
+
+  For more information, see the Amazon QuickSight product page.(https://aws.amazon.com/quicksight/)
+
+-Additional analytics readings and courses
+  This whitepaper contains more information about the AWS offerings used in the data domain: Big Data Analytics Options on AWS(https://d0.awsstatic.com/whitepapers/Big_Data_Analytics_Options_on_AWS.pdf). It is a very recommended reading that will help you in your data learning journey.
+
+  To find more AWS courses on digital training providers, see AWS Digital Training Provider Courses(https://aws.amazon.com/training/digital-training-providers/?th=tile&tile=ways).
+-------------------------------------------------------------------------------------------------------------------------
